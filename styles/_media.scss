@@ -8,7 +8,7 @@
         min-height: 610px;
         height: 100vh;
         width: 100vw;
-        background: url(/images/bg-pattern-desktop.svg) no-repeat;
+        background: url('../images/bg-pattern-desktop.svg') no-repeat;
         background-size: 120vh;
         background-position: top left;
         }
@@ -40,7 +40,7 @@
         margin: 0;
         padding: 0;
         grid-area: 1 / 2 / 4 / 3;
-        background: url('/images/hero-desktop.jpg') no-repeat;
+        background: url('../images/hero-desktop.jpg') no-repeat;
         background-size: cover;
         background-position: center;
         position: absolute;
