@@ -1,0 +1,344 @@
+/* box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* make 1 rem = 10px */
+html {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+
+/* remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+/* remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* remove default font styling */
+a, address {
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* remove border from fieldset and buttons */
+fieldset, button {
+  border: none;
+}
+
+/* remove all animations and transitions for people who prefer not to see them*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* -- Variables -- */
+:root {
+  --main-font: "Josefin Sans", sans-serif;
+  --primary-desat: hsl(0, 36%, 70%);
+  --primary-soft: hsl(0, 93%, 68%);
+  --neutral-dark: hsl(0, 6%, 24%);
+  --gradient-light: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient-primary: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --gradient-hover: linear-gradient(135deg, hsl(0, 81%, 94%), hsl(0, 70%, 82%));
+  --shadow-color: hsla(0, 52%, 63%, 0.5);
+}
+
+body {
+  background: var(--gradient-light);
+  font-family: var(--main-font);
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+}
+
+header {
+  padding: 2.7rem 0 0 2.5rem;
+  height: 8rem;
+}
+
+.hero-image {
+  background: url(/images/hero-mobile.jpg) no-repeat;
+  background-size: cover;
+  min-height: 25rem;
+  height: 60vw;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  padding: 6rem 7vw 0 7vw;
+  height: 100%;
+}
+
+.txt-container {
+  width: 100%;
+  max-width: 42rem;
+  height: 100%;
+  min-height: 40rem;
+  margin: 0 auto;
+}
+
+footer {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.logo {
+  height: 2.5rem;
+}
+
+.txt-container h1 {
+  text-transform: uppercase;
+  color: var(--primary-desat);
+  font-weight: 300;
+  font-size: 4rem;
+  letter-spacing: 1.2rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+.txt-container .dark-text {
+  color: var(--neutral-dark);
+  font-weight: 600;
+}
+.txt-container p {
+  color: var(--primary-desat);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 3.6rem;
+}
+
+.email-container {
+  border: 1px solid var(--primary-desat);
+  border-radius: 2.3rem;
+  height: 4.6rem;
+  width: 100%;
+  padding: 0 0 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.email-container input {
+  border: none !important;
+  outline: none !important;
+}
+.email-container input:active {
+  border: none !important;
+  outline: none !important;
+}
+.email-container input:focus {
+  border: none !important;
+  outline: none !important;
+}
+.email-container .email-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  right: -0.1rem;
+  width: 100%;
+}
+.email-container .email-field {
+  border: none;
+  background: none;
+  height: 2.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: 1px solid gray;
+  padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+}
+.email-container .email-field::-moz-placeholder {
+  color: var(--primary-desat);
+  opacity: 0.5;
+}
+.email-container .email-field:-ms-input-placeholder {
+  color: var(--primary-desat);
+  opacity: 0.5;
+}
+.email-container .email-field::placeholder {
+  color: var(--primary-desat);
+  opacity: 0.5;
+}
+.email-container .email-submit {
+  background: url(/images/icon-arrow.svg) no-repeat, var(--gradient-primary);
+  background-position: center;
+  color: hsla(0deg, 0%, 0%, 0);
+  border: 0;
+  height: 4.6rem;
+  width: 7rem;
+  border-radius: 2.3rem;
+  box-shadow: 0rem 1.5rem 2rem -0.7rem var(--shadow-color);
+}
+
+.invalid-email {
+  border: 1px solid red;
+}
+
+.email-submit:hover {
+  background: url(/images/icon-arrow.svg) no-repeat, var(--gradient-hover);
+  background-position: center;
+  cursor: pointer;
+  height: 5rem;
+  width: 8rem;
+  box-shadow: 0rem 1.5rem 2rem 0.2rem var(--shadow-color);
+}
+
+.error-img {
+  display: block;
+  background: url(/images/icon-error.svg) no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+}
+
+.error-msg {
+  display: block;
+  text-align: left;
+  color: red;
+  font-size: 1.2rem;
+  padding: 0.6rem 0 0.6rem 3rem;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--primary-desat);
+}
+.attribution a {
+  color: var(--neutral-dark);
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 650px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    min-height: 610px;
+    height: 100vh;
+    width: 100vw;
+    background: url(/images/bg-pattern-desktop.svg) no-repeat;
+    background-size: 120vh;
+    background-position: top left;
+  }
+  header {
+    grid-area: 1/1/2/2;
+    padding: 0;
+    min-height: 92px;
+    height: 16vh;
+    width: 57.5vw;
+  }
+  .logo-container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    min-width: 32.5rem;
+    width: 30vw;
+    height: 100%;
+  }
+  .logo {
+    width: 1;
+    height: 3.2rem;
+    margin: 0 auto;
+  }
+  .hero-image {
+    margin: 0;
+    padding: 0;
+    grid-area: 1/2/4/3;
+    background: url("/images/hero-desktop.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 0;
+    min-height: 610px;
+    height: 100%;
+    width: 42.5vw;
+  }
+  main {
+    grid-area: 2/1/3/2;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 435px;
+    height: 75vh;
+    width: 57.5vw;
+  }
+  footer {
+    grid-area: 3/1/4/2;
+  }
+  .txt-container {
+    width: 30vw;
+    min-width: 32.5rem;
+    height: 55vh;
+  }
+  .txt-container h1 {
+    text-align: left;
+    font-size: 6rem;
+  }
+  .txt-container p {
+    text-align: left;
+    font-size: 1.6rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
