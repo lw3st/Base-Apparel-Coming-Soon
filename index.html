@@ -52,6 +52,7 @@
               name="enter-email"
               placeholder="Email Address"
               class="email-field"
+              maxlength="64"
               required
             />
             <div class="error-img hidden" id="error-img"></div>
@@ -64,11 +65,14 @@
             />
           </form>
         </div>
+        <p class="error-msg hidden" id="error-msg" aria-live="polite">
+          Please provide a valid email.
+        </p>
+        <p class="thanks-msg hidden" id="thanks-msg" aria-live="polite">
+          Thank you! We'll contact you soon.
+        </p>
       </div>
 
-      <p class="error-msg hidden" id="error-msg">
-        Please provide a valid email.
-      </p>
     </main>
 
     <footer>

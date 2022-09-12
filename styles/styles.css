@@ -248,8 +248,16 @@ footer {
 
 .error-msg {
   display: block;
-  text-align: left;
-  color: red;
+  text-align: left !important;
+  color: red !important;
+  font-size: 1.2rem;
+  padding: 0.6rem 0 0.6rem 3rem;
+}
+
+.thanks-msg {
+  display: block;
+  text-align: left !important;
+  color: var(--neutral-dark) !important;
   font-size: 1.2rem;
   padding: 0.6rem 0 0.6rem 3rem;
 }
@@ -340,5 +348,11 @@ footer {
   .txt-container p {
     text-align: left;
     font-size: 1.6rem;
+  }
+  .error-msg {
+    font-size: 1.4rem !important;
+  }
+  .thanks-msg {
+    font-size: 1.4rem !important;
   }
 }/*# sourceMappingURL=styles.css.map */

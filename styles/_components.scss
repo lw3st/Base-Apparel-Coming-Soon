@@ -120,8 +120,16 @@
 
 .error-msg {
     display: block;
-    text-align: left;
-    color: red;
+    text-align: left !important;
+    color: red !important;
+    font-size: 1.2rem;
+    padding: .6rem 0 .6rem 3rem;
+}
+
+.thanks-msg {
+    display: block;
+    text-align: left !important;
+    color: var(--neutral-dark) !important;
     font-size: 1.2rem;
     padding: .6rem 0 .6rem 3rem;
 }
